@@ -1,0 +1,182 @@
+<div class="wrapper">
+  <% include header %>
+  
+  <!-- Left side column. contains the logo and sidebar -->
+  <% include aside_left %>
+    
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box bg-green">
+            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Altitude</span>
+              <span class="info-box-number" id="drone_altitude">1m</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 60%"></div>
+              </div>
+              <span class="progress-description">
+                Meters
+              </span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box bg-yellow">
+            <span class="info-box-icon"><i class="fa fa-battery-full"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Batt</span>
+              <span class="info-box-number" id="drone_batt">10%</span>
+              <div class="progress">
+                <div class="progress-bar" id="drone_batt_progress" style="width: 70%"></div>
+              </div>
+              <span class="progress-description" id="drone_batt_min">
+                0 minutes left.
+              </span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="info-box bg-red">
+            <span class="info-box-icon"><i class="fa fa-comments-o"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Speed</span>
+              <span class="info-box-number" id="drone_speed">41,410</span>
+              <div class="progress">
+                <div class="progress-bar" style="width: 60%"></div>
+              </div>
+              <span class="progress-description">
+                m/s
+              </span>
+            </div><!-- /.info-box-content -->
+          </div><!-- /.info-box -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-6 connectedSortable">
+
+          <!-- CO CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Carbon Monoxide (CO)</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="coChart" style="height: 250px; width: 429px;" width="858" height="500"></canvas>
+              </div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+
+          <!-- AREA CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Temperature</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="areaChart" style="height: 250px; width: 429px;" width="858" height="500"></canvas>
+              </div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+
+          <!-- PRESSURE CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Pressure</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="pressureChart" style="height: 250px; width: 429px;" width="858" height="500"></canvas>
+              </div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+
+        </section><!-- /.Left col -->
+
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-6 connectedSortable">
+
+          <!-- LINE CHART -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Humidity</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="lineChart" style="height: 250px; width: 429px;" width="858" height="500"></canvas>
+              </div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+
+           <!-- MAPS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">GPS</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="dashboard_map" style="height: 250px;"></div>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+
+        </section><!-- right col -->
+      </div><!-- /.row (main row) -->
+
+    </section><!-- /.content -->
+  </div><!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 0.0.1
+    </div>
+    <strong>Copyright &copy; 2016 <a href="http://doter.mx">Doter Group</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <% include aside %>
+  
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div><!-- ./wrapper -->
+

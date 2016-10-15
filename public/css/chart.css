@@ -1,0 +1,157 @@
+/* Chart*/
+#chart1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ct-series-a .ct-line {
+  stroke: #0379CA;
+}
+.ct-series-b .ct-line {
+  stroke: #5cb85c;
+}
+.ct-series-c .ct-line {
+  /*stroke: #7101BB;*/
+    stroke:#9947BB;
+}
+.ct-series-d .ct-line {
+  stroke: #d9534f;
+
+}
+.ct-series-e .ct-line {
+  stroke: #000000;
+}
+.ct-line {
+  stroke-width: 2px;
+}
+.ct-label, .ct-axis-title{
+	font-size: 9px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: black;
+}
+
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+	font-size: 15px;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 20px;
+}
+
+.panel-blue {
+    border-color: #0379CA;
+}
+
+.panel-blue > .panel-heading {
+    border-color: #0379CA;
+    color: #fff;
+    background-color: #0379CA;
+}
+
+.panel-blue > a {
+    color: #0379CA;
+}
+
+.panel-blue > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-blue {
+    border-color: #0379CA;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #9947BB;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #9947BB;
+    color: #fff;
+    background-color: #9947BB;
+}
+
+.panel-yellow > a {
+    color: #9947BB;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}
+span.status{
+    padding-left: 10px;
+}
+.export{
+    position: relative;
+    top: 0;
+}
+.export i{
+    font-size: 20px;
+}
+span.ct-label.ct-horizontal.ct-end {
+    position: relative;
+    top: .5em;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+}
+span#temperature, span#time{
+    position: relative;
+}
+span#temperature{
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    left: 0;
+    bottom: 200px;
+}
+span#time {
+    left: 200px;
+    bottom: 0;
+}
+
+#report div{
+    margin: 5px 0;
+}
