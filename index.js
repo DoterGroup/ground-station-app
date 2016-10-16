@@ -44,12 +44,13 @@ client.connect(function(err) {
 
 // serial connection =============================================================
 // localize object constructor
-var SerialPort = serialport.SerialPort;
+var SerialPort = serialport;
 
 var serialPort = new SerialPort("/dev/tty.usbserial-DA0071OQ", {
-  baudrate: 57600,
-  parser: serialport.parsers.readline("\n")
-}, false);
+	autoOpen: false,
+	baudrate: 57600,
+	parser: serialport.parsers.readline("\n")
+});
 
 
 serialPort.open(function (error) {
