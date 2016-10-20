@@ -76,13 +76,29 @@ module.exports = function(app, serial) {
 	});
 
 	// Flight modes
-	app.post('/mode/:id', isLoggedIn, function(req, res) {
+	app.get('/mode/:id', function(req, res) {
 		var id = req.params.id;
 		
 		serial.write("mode:" + id + "\n", function(err, results) {
 			console.log('err ' + err);
 			console.log('results ' + results);
-		});	
+		});
+
+		res.redirect('/');
+	
+	});
+
+	// Arm /Disarm
+	app.get('/arm/:id', function(req, res) {
+		var id = req.params.id
+
+		serial.write("arm:" + id + "\n", function(err, result) {
+			console.log('error: ' + err);
+			console.log('results ' + result);
+		});
+
+		// res.render('index.ejs', {});
+		res.redirect('/');
 	});
 
 	// Module Settings
