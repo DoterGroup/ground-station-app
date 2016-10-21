@@ -101,6 +101,20 @@ module.exports = function(app, serial) {
 		res.redirect('/');
 	});
 
+	// Takeoff
+	app.get('/takeoff/:val', function(req, res) {
+		var val = req.params.val
+
+		serial.write("takeoff:" + val + "\n", function(err, result) {
+			console.log('error: ' + err);
+			console.log('results ' + result);
+		});
+
+		// res.render('index.ejs', {});
+		res.redirect('/');
+	});
+
+
 	// Module Settings
 	app.get('/settings', isLoggedIn, function(req, res) {
 		var user = req.user;
