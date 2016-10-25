@@ -1,3 +1,7 @@
+# Connection Diagram
+
+![Connection Diagram](public/img/DroneLayout.png)
+
 # Node.js setup
 
 USB serial
